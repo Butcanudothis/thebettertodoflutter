@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_todo/screens/add_task_screen.dart';
 import 'package:flutter_todo/widgets/task_list.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Colors.orangeAccent,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         elevation: 1.5,
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) => AddTaskScreen());
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,7 +31,7 @@ class TasksScreen extends StatelessWidget {
                     backgroundColor: Colors.white,
                     radius: 30.0,
                     child: Icon(
-                      Icons.list,
+                      Icons.track_changes,
                       color: Colors.lightBlueAccent,
                       size: 40,
                     ),
