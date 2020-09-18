@@ -7,9 +7,9 @@ class TaskList extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30),
       children: [
-        TaskTile(taskName: 'This is a task', completedState: false),
-        TaskTile(taskName: 'This is a task', completedState: false),
-        TaskTile(taskName: 'This is a task', completedState: false),
+        TaskTile(taskName: 'This is a task'),
+        TaskTile(taskName: 'This is a task'),
+        TaskTile(taskName: 'This is a task'),
       ],
     );
   }
