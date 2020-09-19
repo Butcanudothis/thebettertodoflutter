@@ -5,11 +5,11 @@ class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromRGBO(33, 33, 33, 100.0),
+      color: Color(0xFF101010),
       child: Container(
         padding: EdgeInsets.fromLTRB(35, 10, 35, 60),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.orangeAccent,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
@@ -22,7 +22,7 @@ class AddTaskScreen extends StatelessWidget {
               'Add Task',
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color: Colors.orangeAccent,
+                  color: Colors.blueGrey.shade900,
                   fontSize: 30.0,
                   fontWeight: FontWeight.w700),
             ),
@@ -35,10 +35,10 @@ class AddTaskScreen extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {},
-              color: Colors.orangeAccent,
+              color: Colors.blueGrey.shade900,
               child: Text(
                 'Add',
-                style: TextStyle(color: Colors.white, fontSize: 25.0),
+                style: TextStyle(color: Colors.orangeAccent, fontSize: 25.0),
               ),
             ),
           ],

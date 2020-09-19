@@ -9,7 +9,11 @@ class TasksScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.orangeAccent,
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        backgroundColor: Colors.orangeAccent,
+        child: Icon(
+          Icons.add,
+          color: Colors.blueGrey.shade900,
+        ),
         elevation: 1.5,
         onPressed: () {
           showModalBottomSheet(
@@ -28,11 +32,11 @@ class TasksScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.blueGrey.shade900,
                     radius: 30.0,
                     child: Icon(
                       Icons.track_changes,
-                      color: Colors.lightBlueAccent,
+                      color: Colors.orangeAccent,
                       size: 40,
                     ),
                   ),
@@ -42,14 +46,15 @@ class TasksScreen extends StatelessWidget {
                   Text(
                     'Just do it.',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.blueGrey.shade900,
                       fontSize: 40,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                   Text(
                     '12 Tasks',
-                    style: TextStyle(color: Colors.white, fontSize: 18.0),
+                    style: TextStyle(
+                        color: Colors.blueGrey.shade900, fontSize: 18.0),
                   ),
                 ],
               ),
@@ -59,7 +64,7 @@ class TasksScreen extends StatelessWidget {
             child: Container(
               height: 300,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Colors.blueGrey.shade900,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(20.0),
                   topLeft: Radius.circular(20.0),
