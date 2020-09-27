@@ -3,6 +3,19 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_todo/screens/add_task_screen.dart';
 import 'package:flutter_todo/widgets/task_list.dart';
 import 'package:flutter_todo/models/task.dart';
+import 'package:provider/provider.dart';
+
+class Data extends ChangeNotifier {
+  List<Task> tasks = [
+    Task(name: 'Buy milk'),
+    Task(name: 'Buy eggs'),
+    Task(name: 'Buy bread'),
+  ];
+  addTask(String t) {
+    tasks.add(Task(name: t));
+    notifyListeners();
+  }
+}
 
 class TasksScreen extends StatefulWidget {
   @override
@@ -10,12 +23,6 @@ class TasksScreen extends StatefulWidget {
 }
 
 class _TasksScreenState extends State<TasksScreen> {
-  List<Task> tasks = [
-    Task(name: 'Buy milk'),
-    Task(name: 'Buy eggs'),
-    Task(name: 'Buy bread'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,12 +38,12 @@ class _TasksScreenState extends State<TasksScreen> {
           showModalBottomSheet(
               context: context,
               builder: (BuildContext context) => AddTaskScreen(
-                    addTaskCallback: (newTaskTitle) {
-                      setState(() {
-                        tasks.add(Task(name: newTaskTitle));
-                      });
-                      Navigator.pop(context);
-                    },
+                  // addTaskCallback: (newTaskTitle) {
+                  //   setState(() {
+                  //     //  tasks.add(Task(name: newTaskTitle));
+                  //   });
+                  //   Navigator.pop(context);
+                  // },
                   ));
         },
       ),
@@ -71,7 +78,7 @@ class _TasksScreenState extends State<TasksScreen> {
                     ),
                   ),
                   Text(
-                    '${tasks.length} Tasks',
+                    '${Provider.of<Data>(context).tasks.length} Tasks',
                     style: TextStyle(
                         color: Colors.blueGrey.shade900,
                         fontSize: 18.0,
@@ -92,7 +99,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 ),
               ),
               child: TaskList(
-                tasks: tasks,
+                tasks: Provider.of<Data>(context).tasks,
               ),
             ),
           ),
