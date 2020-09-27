@@ -2,27 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_todo/screens/add_task_screen.dart';
 import 'package:flutter_todo/widgets/task_list.dart';
-import 'package:flutter_todo/models/task.dart';
+import 'package:flutter_todo/models/task_data.dart';
 import 'package:provider/provider.dart';
 
-class Data extends ChangeNotifier {
-  List<Task> tasks = [
-    Task(name: 'Buy milk'),
-    Task(name: 'Buy eggs'),
-    Task(name: 'Buy bread'),
-  ];
-  addTask(String t) {
-    tasks.add(Task(name: t));
-    notifyListeners();
-  }
-}
-
-class TasksScreen extends StatefulWidget {
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
+class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +61,7 @@ class _TasksScreenState extends State<TasksScreen> {
                     ),
                   ),
                   Text(
-                    '${Provider.of<Data>(context).tasks.length} Tasks',
+                    '${Provider.of<TaskData>(context).countTasks} Tasks',
                     style: TextStyle(
                         color: Colors.blueGrey.shade900,
                         fontSize: 18.0,
@@ -98,9 +81,7 @@ class _TasksScreenState extends State<TasksScreen> {
                   topLeft: Radius.circular(20.0),
                 ),
               ),
-              child: TaskList(
-                tasks: Provider.of<Data>(context).tasks,
-              ),
+              child: TaskList(),
             ),
           ),
         ],
