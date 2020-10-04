@@ -4,6 +4,7 @@ import 'package:flutter_todo/screens/add_task_screen.dart';
 import 'package:flutter_todo/widgets/task_list.dart';
 import 'package:flutter_todo/models/task_data.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class TasksScreen extends StatelessWidget {
   @override
@@ -40,13 +41,22 @@ class TasksScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  CircleAvatar(
-                    backgroundColor: Colors.blueGrey.shade900,
-                    radius: 30.0,
-                    child: Icon(
-                      Icons.track_changes,
-                      color: Colors.orangeAccent,
-                      size: 40,
+                  FlatButton(
+                    onPressed: () {
+                      FirebaseAuth.instance.signOut();
+                      Navigator.pop(context);
+                    },
+                    child: Hero(
+                      tag: "icon",
+                      child: CircleAvatar(
+                        backgroundColor: Colors.blueGrey.shade900,
+                        radius: 30.0,
+                        child: Icon(
+                          Icons.track_changes,
+                          color: Colors.orangeAccent,
+                          size: 40,
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(

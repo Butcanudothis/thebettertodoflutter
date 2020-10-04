@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1002227233342",
+    "firebase_url": "https://thebettertodo-8a738.firebaseio.com",
+    "project_id": "thebettertodo-8a738",
+    "storage_bucket": "thebettertodo-8a738.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002227233342:android:7266f69367b6f707b2576f",
+        "android_client_info": {
+          "package_name": "com.wiaria.thebettertodoflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1002227233342-8c098u9sf7ntt573jtan9euujj18eqte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPLH5Gbbq_cJrxmtXC9_aBUCLjj6KoRf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1002227233342-8c098u9sf7ntt573jtan9euujj18eqte.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
