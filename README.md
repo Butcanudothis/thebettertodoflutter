@@ -32,6 +32,3 @@ Contributions to The Better Todo Flutter are welcome and encouraged. To contribu
 2. Create a new branch for your feature or bugfix
 3. Commit your changes to your new branch
 4. Create a pull request
-
-### License
-The Better Todo Flutter is released under the [MIT License](LICENSE).
