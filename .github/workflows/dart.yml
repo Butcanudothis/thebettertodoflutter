@@ -8,7 +8,7 @@ name: Build APK
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build_apk:
