@@ -1,0 +1,31 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1.5.0
+        with:
+          channel: 'stable'
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Build APK
+        run: flutter build apk
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-app-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
