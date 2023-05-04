@@ -1,3 +1,4 @@
+<img align = 'center' src="https://github.com/Butcanudothis/thebettertodoflutter/blob/master/Screenshot%202023-05-05%20at%207.41.02%20am.png" height ="720" width ="360">
 
 # The Better Todo Flutter
 
