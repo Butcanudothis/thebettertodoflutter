@@ -1,8 +1,5 @@
-Sure! Here's an example changelog based on the commits provided:
 
-Based on this changelog, the following could be a generic documentation:
-
-## The Better Todo Flutter
+# The Better Todo Flutter
 
 The Better Todo Flutter is a todo list app that aims to provide a smooth and seamless user experience. The app is built using Flutter and features state management with the Provider package and Firebase Auth for Google Sign-In.
 
